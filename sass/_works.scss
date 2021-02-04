@@ -1,0 +1,29 @@
+.works{
+    grid-row: 7 / 8;
+    grid-column: full-start / full-end;
+
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    margin: 5vh 23vw 10vh 23vw;
+    @include respond(tab-port){
+        margin-right: 8vw;
+        margin-left: 8vw;
+    }
+
+    &--head{
+        font-size: 3rem;
+    }
+    &--para{
+        margin-top: 1.8rem;
+        align-self: center;
+        // margin-top: 8vh;
+        font-size: 1.7rem;
+        color:  #424949;
+        text-align: center;
+
+        @include respond(tab-port){
+            font-size: 2rem;
+        }
+    }   
+}

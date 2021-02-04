@@ -1,0 +1,195 @@
+.head{
+    grid-row: 1 / 2;
+    grid-column: full-start / full-end;
+
+    display: grid;
+    grid-template-columns: repeat(12, minmax(5rem, 1fr));
+    grid-gap: .5rem;
+    
+    justify-items: start; //horizontally
+    align-items: center; //vertically
+
+
+    background-image: url(../img/header.jpg);
+    background-size: cover; //auto
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    background-position: stretch;
+    opacity: .9;
+
+    // & > *{
+    //     margin: 2rem 9rem 0rem 9rem;
+    // }
+    
+    @include respond(tab-port){
+        grid-column: 1 / -1;
+        background-image: none;
+        background-color:  #cacfd2;
+    }
+
+    &--logo{
+        // margin: 1.5rem 0rem 0rem 9rem;
+        margin: 3vh 0rem 0rem 9vw;
+        @include respond(phone){
+            margin-left: 2rem;
+        }
+        img{
+            width: 15rem;
+            height: 3rem;
+        }
+    }
+
+    &__nav{
+        margin: 3vh 0rem 0rem 2.5vw;
+        grid-column: 5 / -1;
+
+        @include respond(tab-land){
+            margin: 3vh 0rem 0rem 0vw;
+            grid-column: 4 / -1;
+        }
+        @include respond(tab-port){
+            align-self: start;
+            grid-column: 1 / -1;
+            margin-left: 9vw;
+        }
+        @include respond(phone){
+            margin-left: 2rem;
+            // margin-right: 1.5rem;
+        }
+
+        &--btn{
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: .8rem 1.2rem; 
+            // margin: .5rem;
+            display: inline-block;
+            border-radius: .5rem;
+            background-color: transparent;
+            color: #fff;
+            font-size: 1.3rem;
+            font-weight: bold;
+            // color: #000000;
+            color: black;
+            border: none; //remove the default border of btn.
+            cursor: pointer;
+
+            @include respond(tab-land){
+                font-size: 1.4rem;
+                padding: .8rem 1.1rem; 
+            }
+            @include respond(tab-port){
+                font-size: 1.8rem;
+                padding: .8rem .5rem; 
+                margin: .5rem;
+            }
+        }
+        &--home{
+            color: #0000FF;
+        }
+        &--login{
+            font-size: 1.2rem;
+            background-color: #082440;
+            color: #fff;
+            margin-right: 1rem;
+            transition: all .2s;
+
+            @include respond(tab-port){
+                padding: 1rem 1.5rem;
+            }
+
+            &:hover { /* .btn:hover */
+                transform: translateY(-3px); /* move up according to orignal state. */
+                background-color: #0F3051;
+            }
+            &:active{
+                transform: translateY(0); //back to orignal.
+                border: none;
+            }
+
+        }
+        &--contactagain{
+            font-size: 1.2rem;
+            border: 1px solid #082440;
+            transition: all .2s;
+
+            @include respond(tab-port){
+                padding: 1rem 1.5rem;
+            }
+
+            &:hover { /* .btn:hover */
+                transform: translateY(-3px); /* move up according to orignal state. */
+                // background-color: #0F3051;
+            }
+            &:active{
+                transform: translateY(0); //back to orignal.
+                border: none;
+            }
+        }
+
+    }
+
+    // @include respond(tab-port){
+    //     background-image: url(../img/header.jpg);
+    //     background-size: cover; //auto
+    //     background-repeat: no-repeat;
+    //     width: 100%;
+    //     height: 100%;
+    //     background-position: stretch;
+    //     opacity: .9;
+    // }
+    &--heading{
+        grid-column: 1 / 6;
+
+        
+        // margin: 5rem 0rem 0rem 9rem;
+        margin: 8vh 0rem 0rem 9vw;
+        font-family: $font-primary;
+        font-size: 3.6rem;
+        font-weight: bold;
+
+        @include respond(tab-land){
+            grid-column: 1 / -1;
+        }
+    }
+    &--btn{
+        grid-column: 1 / -1;
+        margin: 3vh 0rem 15vh 9vw;
+        // margin: 0rem 0rem 0rem 9rem;
+
+        &, //head--btn
+        &:link,
+        &:visited{
+            // margin: 2rem 0rem 0rem 9rem;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: .6rem 6rem; /* top/bottom=15px, left/right=40px */
+            display: inline-block;
+            border-radius: .5rem;
+            color: white;
+            font-size: 1.6rem;
+            font-weight: bold;
+            background-color: #082440;
+            transition: all .2s;
+            // position: relative;
+            // font-size: $default-font-size;
+            //change the button elemenet.
+            border: none; //remove the default border of btn.
+            cursor: pointer;
+        }  
+        
+        &:hover { /* .btn:hover */
+            transform: translateY(-3px); /* move up according to orignal state. */
+            background-color: #0F3051;
+    
+            // &::after{ /* .btn:hover::after */
+            //     transform: scaleX(1.4) scaleY(1.6); /*scale increase the element*/
+            //     opacity: 0; /*elem fades-out*/
+            // }
+        }
+        &:active{
+            transform: translateY(0); //back to orignal.
+            border: none;
+        }
+    }
+}

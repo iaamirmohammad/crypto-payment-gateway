@@ -1,0 +1,105 @@
+.reasons{
+    grid-row: 6 / 7;
+    grid-column: full-start / full-end;
+
+    display: grid;
+    grid-template-columns: repeat(12, minmax(min-content, 1fr));
+    grid-gap: 1rem;
+
+    align-items: center;
+
+    margin: 0vh 8vw 5vh 8vw;
+
+    @include respond(tab-port){
+        margin: 5vh 8vw;
+        // grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+    }
+
+    &__left{
+
+        grid-column: 1 / 4;
+        font-size: 1.6rem;
+
+        @include respond(tab-port){
+            grid-column: 1 / -1;
+        }
+
+        &__one{
+            margin: 0rem 0rem 3rem 0rem;
+            
+            &--head{
+                margin-bottom: 1.5rem;
+                margin-right: 18rem;
+                border-bottom: .1rem solid lightskyblue;
+
+                @include respond(tab-port){
+                    margin-right: 0rem;
+                    border-bottom: none;
+                }
+            }
+            &--para{
+                font-size: 1.5rem;
+                color:  #424949;
+                @include respond(tab-port){
+                    font-size: 2rem;
+                }
+            }
+        }
+        &__two{
+            &--head{
+                margin-bottom: 1.5rem;
+                margin-right: 11rem;
+                border-bottom: .1rem solid lightskyblue;
+                @include respond(tab-port){
+                    margin-right: 0rem;
+                    border-bottom: none;
+                }
+            }
+            &--para{
+                font-size: 1.5rem;
+                color:  #424949;
+                @include respond(tab-port){
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+
+    &__mid{
+        grid-column: 4 / 10;
+        @include respond(tab-port){
+            grid-column: 1 / -1;
+        }
+        img{
+            padding-top: 5rem;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__right{
+        align-self: center;
+        // justify-self:center;
+        grid-column: 10 / -1;
+        font-size: 1.6rem;
+
+        @include respond(tab-port){
+            grid-column: 1 / -1;
+        }
+
+        &--head{
+            margin-bottom: 1.65em;
+            margin-right: 13rem;
+            border-bottom: .1rem solid lightskyblue;
+            @include respond(tab-port){
+                margin-right: 0rem;
+                border-bottom: none;
+            }
+        }
+        &--para{
+            color:  #424949;
+            @include respond(tab-port){
+                font-size: 2rem;
+            }
+        }
+    }
+}
